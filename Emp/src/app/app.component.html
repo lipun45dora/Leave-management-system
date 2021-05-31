@@ -1,4 +1,12 @@
-<h1>{{title}}</h1>
+<!--<app-nav></app-nav>-->
+<div class="container" style="margin-top: 100px">
+<h5>Employee</h5>
 <ul>
     <li *ngFor='let user of users'>{{user.id}}-{{user.userName}}</li>
 </ul>
+
+<h5>Admin users</h5>
+<ul>
+    <li *ngFor='let user of admin'>{{user.id}}-{{user.userName}}</li>
+</ul>
+</div>

@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+
+
+      <a class="navbar-brand" href="#">Assurecare</a>
+     
+      
+        <ul class="navbar-nav me-auto " *ngIf="((accountService.currentUser$ | async) || (accountService.currentAdmin$ | async))">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" >Apply Leave</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="logout()" >Logout</a>
+          </li>
+        </ul>
+
+        <div class="dropdown" *ngIf="((accountService.currentUser$ | async) || (accountService.currentAdmin$ | async))" dropdown>
+          <a class="dropdown-toggle text-light" dropdownToggle> Welcome </a>
+          <div class="dropdown-menu mt-3" *dropdownMenu >
+            <a  class="dropdown-item">Edit Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()"  >Logout</a>
+          </div>               
+       </div>
+
+        <form *ngIf="((accountService.currentUser$ | async) || (accountService.currentAdmin$ | async))===null" #loginForm="ngForm" class="d-flex mt-2"  autocomplete="off">
+          <input  name="username" [(ngModel)]="model.username" class="form-control me-sm-2" type="text" placeholder="Username">
+          <input name="password"[(ngModel)]="model.password" class="form-control me-sm-2" type="password" placeholder="password">
+          <!--<button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>-->
+          <div class="btn-group" dropdown >
+            <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                     aria-controls="dropdown-basic">
+               Login 
+             </button>
+             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                 role="menu" >
+               <li role="menuitem"><button  class="dropdown-item" type="button" (click)="Adminlogin()">Admin</button></li>
+               
+               
+               <li class="divider dropdown-divider"></li>
+               <li role="menuitem"><button class="dropdown-item" type="button" (click)="login()">Employee</button>
+               </li>
+             </ul>
+           </div>
+
+
+          </form>       
+           <!--<div class="btn-group" dropdown (ngsubmit)="login()">
+           <button id="button-basic" dropdownToggle type="submit" class="btn btn-primary dropdown-toggle"
+                    aria-controls="dropdown-basic">
+              Login 
+            </button>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-basic">
+              <li role="menuitem"><button class="dropdown-item" type="submit" (ngsubmit)="login()">Admin</button></li>
+              
+              
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem"><button class="dropdown-item" type="submit" (ngsubmit)="login()">Employee</button>
+              </li>
+            </ul>
+          </div> -->
+
+       
+   
+      
+  
+  </div>
+
+</nav>

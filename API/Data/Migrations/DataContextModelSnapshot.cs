@@ -36,7 +36,7 @@ namespace API.Data.Migrations
 
                     b.ToTable("Users");
                 });
-               modelBuilder.Entity("API.Entities.AdminUser", c =>
+              modelBuilder.Entity("API.Entities.AdminUser", c =>
                 {
                     c.Property<int>("Id")
                         .ValueGeneratedOnAdd()
