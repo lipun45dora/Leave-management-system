@@ -14,8 +14,8 @@ namespace API.Controllers
 
     public class AdminController :BaseApiController
     {   
-        private readonly AdminDataContext _context;
-        public AdminController(AdminDataContext context)
+        private readonly DataContext _context;
+        public AdminController(DataContext context)
         {
             _context = context;
 

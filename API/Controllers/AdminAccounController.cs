@@ -16,9 +16,9 @@ namespace API.Controllers
 
     public class AdminAccountController : BaseApiController
     {
-        private readonly AdminDataContext _context;
+        private readonly DataContext _context;
         private readonly ITokenService _tokenService;
-        public AdminAccountController(AdminDataContext context, ITokenService tokenService)
+        public AdminAccountController(DataContext context, ITokenService tokenService)
         {
             _tokenService = tokenService;
             _context = context;
@@ -38,10 +38,11 @@ namespace API.Controllers
 
             };
 
-            return new AdminDto
-            {
-                Username = user.UserName,
-                Token = _tokenService.CreateToken(user)
+            _context.Admin.Add(user);
+            await _context.SaveChangesAsync();
+            return new AdminDto{
+                Username= user.UserName,
+            Token = _tokenService.CreateToken(user)
             };
         }
 

@@ -1,5 +1,5 @@
-/*export interface Admin
+export interface Admin
 {
     username:string;
     token:string;
-}*/
+}

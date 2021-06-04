@@ -21,7 +21,17 @@ namespace API.Data.Migrations
                 table: "Users",
                 type: "BLOB",
                 nullable: true);
+            migrationBuilder.AddColumn<byte[]>(
+                name: "PasswordHash",
+                table: "Admin",
+                type: "BLOB",
+                nullable: true);
 
+            migrationBuilder.AddColumn<byte[]>(
+                name: "PasswordSalt",
+                table: "Admin",
+                type: "BLOB",
+                nullable: true);
            
         }
 
@@ -37,7 +47,14 @@ namespace API.Data.Migrations
                 name: "PasswordSalt",
                 table: "Users");
 
-          
+
+              migrationBuilder.DropColumn(
+                name: "PasswordHash",
+                table: "Admin");
+
+            migrationBuilder.DropColumn(
+                name: "PasswordSalt",
+                table: "Admin");
         }
     }
 }

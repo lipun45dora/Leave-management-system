@@ -18,10 +18,27 @@ namespace API.Data.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                 });
+        
+        
+          migrationBuilder.CreateTable(
+                name: "Admin",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserName = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Admin", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+           migrationBuilder.DropTable(
+                name: "Admin");
+        
             migrationBuilder.DropTable(
                 name: "Users");
         }

@@ -1,8 +1,8 @@
-/*import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { Observable } from 'rxjs';
-//import { User } from '../_models/user';
-//import { AccountService } from '../_services/account.service';
+import { User } from '../_models/user';
+import { AccountService } from '../_services/account.service';
 
 @Component({
   selector: 'app-nav',
@@ -46,5 +46,5 @@ export class NavComponent implements OnInit {
  }
 
 
-}*/
+}
 

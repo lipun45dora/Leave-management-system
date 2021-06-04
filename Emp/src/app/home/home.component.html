@@ -1,0 +1,72 @@
+<!--<div class="container mt-5">
+<div  *ngIf="!registerMode"style='text-align : center;'>
+    <h1>Assurecare Leave Management System</h1>
+    <p class="lead">Come on in to see your details....all you need to do is sign up!</p>
+    <div  class="text-center">
+        <!--<div   class="btn-group" dropdown>
+          <button id="button-basic" dropdownToggle type="button" class="btn btn-primary btn-lg mr-2 dropdown-toggle"
+                     aria-controls="dropdown-basic">
+               Register
+             </button>
+             <ul   id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                 role="menu" >
+               <li  role="menuitem"><button class="dropdown-item" type="button" (click)="adminRegisterToggle()">Admin</button></li>
+               
+               
+               <li class="divider dropdown-divider"></li>
+               <li role="menuitem"><button class="dropdown-item" type="button" (click)="empRegisterToggle()">Employee</button>
+               </li>
+               
+              </ul>
+              
+         </div>
+         <button (click)= "empRegisterToggle()" class="btn btn-primary bt-lg mr-2">Register</button>
+     <button class="btn btn-info btn-lg mr-2">Learn more</button>
+     <br><br>
+     <button (click)= "adminRegisterToggle()" class="btn btn-primary  mr-2">Are you an Admin ?</button>
+    </div>
+
+    <div *ngIf="regisetrMode" class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+              <app-register></app-register>
+            </div>
+        </div>
+        </div>
+
+
+</div>
+</div>-->
+<div class="container mt-5">
+    <div *ngIf="!registerMode" style ="text-align: center">
+        <h1>Leave Management System</h1>
+        <p class="lead"><b>To access our system.... all you need to do is sign up!</b></p>
+        <div class="text-center">
+            <button (click)= "empRegisterToggle()" class="btn btn-primary bt-lg mr-2">Register</button>
+           {{" "}} <button class="btn btn-info bt-lg ">Learn more</button>
+           <br><br>
+           <!--<button (click)= "adminRegisterToggle()" class="btn btn-primary  mr-2">Are you an Admin ?</button>-->
+          </div>
+    </div>
+    <div *ngIf="registerMode" class="container">
+    <div class="row justify-content-center">
+        <div class="col-4"> 
+            <app-register  (cancelRegister)="cancelRegisterMode($event)"></app-register>
+          
+            </div>
+    </div>
+    </div>
+
+</div>
+  <div *ngIf="!adminregisterMode" style ="text-align: center">
+        <div class="text-center">
+            <button (click)= "adminRegisterToggle()" class="btn btn-primary  mr-2">Are you an Admin ?</button>
+          </div>
+    </div>
+    <div *ngIf="adminregisterMode" class="container">
+    <div class="row justify-content-center">
+        <div class="col-4"> 
+            <app-admin-register  (cancelRegister)="cancelRegisterMode($event)"></app-admin-register>
+            </div>
+    </div>
+</div>

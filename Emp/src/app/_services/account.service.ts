@@ -1,4 +1,4 @@
-/*import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -42,6 +42,30 @@ Adminlogin(model:any)
       })
     )
   }
+  empRegister(model:any)
+  {
+return this.http.post(this.baseUrl + 'account/register', model).pipe(
+  map((user:User) =>{
+    if(user){
+      localStorage.setItem('user', JSON.stringify(user));
+      this.currentUserSource.next(user);
+    }
+  })
+)
+  }
+
+  adminRegister(model:any)
+  {
+return this.http.post(this.baseUrl + 'adminaccount/register', model).pipe(
+  map((user:Admin) =>{
+    if(user){
+      localStorage.setItem('user', JSON.stringify(user));
+      this.currentAdminSource.next(user);
+    }
+  })
+)
+  }
+    
   setCurrentAdmin(user:Admin)
   {
     this.currentAdminSource.next(user);
@@ -56,4 +80,5 @@ Adminlogin(model:any)
     this.currentAdminSource.next(null);
     this.currentUserSource.next(null);
   }
-}*/
+}
+

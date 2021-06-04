@@ -11,6 +11,6 @@ namespace API.Data
         //public DbSet<AdminUser> Admin{get; set;}
 
         public DbSet<AppUser> Users{get; set;}
-        //public DbSet<AdminUser> Admin{get; set;}
+        public DbSet<AdminUser> Admin{get; set;}
     }
 }

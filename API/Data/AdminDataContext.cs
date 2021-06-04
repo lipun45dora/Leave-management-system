@@ -1,4 +1,4 @@
-using API.Entities;
+/*using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -14,4 +14,4 @@ namespace API.Data
         //public DbSet<AppUser> Users{get; set;}
         public DbSet<AdminUser> Admin{get; set;}
     }
-}
+}*/

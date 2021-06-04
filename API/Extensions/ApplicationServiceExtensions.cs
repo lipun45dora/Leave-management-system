@@ -14,10 +14,10 @@ namespace API.Extentions
         {
           services.AddScoped<ITokenService, TokenService>();
 
-            services.AddDbContext<AdminDataContext>(options =>
+            /*services.AddDbContext<DataContext>(options =>
            {
                options.UseSqlite(config.GetConnectionString("DefaultConnection"));
-           });
+           });*/
            services.AddDbContext<DataContext>(options =>
            {
                options.UseSqlite(config.GetConnectionString("DefaultConnection"));

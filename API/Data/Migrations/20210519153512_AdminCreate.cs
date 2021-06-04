@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿/*using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Data.Migrations
 {
@@ -26,4 +26,4 @@ namespace API.Data.Migrations
                 name: "Admin");
         }
     }
-}
+}*/
