@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   title = 'Leave Management System';
   users:any;
   admin: any;
+  navMode= false;
+  adminnavMode= false;
   constructor ( private accountService : AccountService){}
   ngOnInit() {
     // this.getUsers();
@@ -29,7 +31,16 @@ export class AppComponent implements OnInit {
     const user : Admin= JSON.parse(localStorage.getItem('user'));
     this.accountService.setCurrentAdmin(user);
   }
-
+  /* getnavmode()
+   {
+     this.navMode=!this.navMode;
+     this.adminnavMode=false;
+   }
+   getadminNavMode()
+   {
+     this.adminnavMode= !this.adminnavMode;
+     this.navMode=false;
+   }*/
   /*getUsers()
   {
     this.http.get('https://localhost:5001/api/users').subscribe(response =>{

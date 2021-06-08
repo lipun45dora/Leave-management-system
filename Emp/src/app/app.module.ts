@@ -10,13 +10,30 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
-@NgModule({
+import { MemberListComponent } from './members/member-list/member-list.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { ListsComponent } from './lists/lists.component';
+import { ApplyLeaveComponent } from './apply-leave/apply-leave.component';
+import {ToastrModule} from 'ngx-toastr';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { AdminMembersComponent } from './adminmember/admin-members/admin-members.component';
+import { AdminHomeComponent } from './adminmember/admin-home/admin-home.component';
+import { AdminComponent } from './adminmember/admin/admin.component';
+ @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
     RegisterComponent,
     AdminRegisterComponent,
+    MemberListComponent,
+    MemberDetailComponent,
+    ListsComponent,
+    ApplyLeaveComponent,
+    AdminNavComponent,
+    AdminMembersComponent,
+    AdminHomeComponent,
+    AdminComponent,
     
   ],
   imports: [
@@ -26,10 +43,11 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ToastrModule.forRoot({positionClass: 'toast-bottom-right'})
    
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
